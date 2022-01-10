@@ -23,13 +23,19 @@ namespace DuonosKepykla
             double pardavimoKaina = Convert.ToDouble(Console.ReadLine());
 
             int darboValandos = 8;
+            
 
-            var duonaPerValanda = kiekDarbuotoju * 1;
-            var kepaPerValanda = kiekDarbuotoju * 1;
-            var pardavimai = pardavimoKaina + savikaina * kepaDuona;
+            var duonaPerValanda = kepaDuona * kiekDarbuotoju; // iskepa duonos per valanda            
+            var iskepaPerDiena = duonaPerValanda * darboValandos; //iskepa per para
+            var pelnas = iskepaPerDiena * pardavimoKaina - (iskepaPerDiena / savikaina); //isminusavus islaidas bus gautas pelas
 
-            Console.WriteLine($"gali iskepti: {duonaPerValanda} \nKepykla turi darbuotoju:{kiekDarbuotoju} \nDuonos savikaina:{savikaina}\nDuonos pardavimo kaina:{pardavimoKaina}");
-            Console.WriteLine($"Spes iskpeti:{duonaPerValanda}\nPelnas:{pardavimai}");
+            //var pardavimai = pardavimoKaina - (savikaina * kepaDuona);
+
+
+            Console.WriteLine($"gali iskepti: {duonaPerValanda} \nKepykla turi darbuotoju:{kiekDarbuotoju}");
+            Console.WriteLine($"Duonos savikaina:{savikaina}\nDuonos pardavimo kaina:{pardavimoKaina}"); 
+            Console.WriteLine($"Iskepa per para:{iskepaPerDiena}");
+            Console.WriteLine($"Pelnas:{pelnas}");
             Console.ReadLine();
 
 
