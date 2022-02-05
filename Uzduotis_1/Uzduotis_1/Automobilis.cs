@@ -31,15 +31,17 @@ namespace Uzduotis_1
                 if (vaziuoti.Rida <= 9)
                 {
                     vaziuoti.Rida += 10;
-                    Console.WriteLine("Automobilis:{0} Rida buvo prideta:{1}", vaziuoti.Modelis, vaziuoti.Rida);
+                    Console.WriteLine("Automobilio:{0} Rida buvo prideta:{1}", vaziuoti.Modelis, vaziuoti.Rida);
                 }
             }
 
             foreach (var sugedo in Sarasas)
-            {
+            {                
                 if (sugedo.Rida >= 10)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Sugedo(es):{0} Rida: {1}", sugedo.Modelis, sugedo.Rida);
+                    Console.ResetColor();
                 }
             }
 
@@ -49,15 +51,16 @@ namespace Uzduotis_1
             switch(taipNe)
             {
                 case "Taip":
-                    garazas.Taisyti(Sarasas);                    
+                    garazas.Taisyti(Sarasas);                
                 break;
+                    
+                case "Ne":
+                    garazas.BandytiVaziuoti(Sarasas);                    
+                    break;
 
                 default:
                     break;
             }
-
         }
-
-
     }
 }
